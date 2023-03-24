@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Bank Challan</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $("#account-no").click(function() {
+                var url = "http://localhost/Bank/Bank1.php?account-no=";
+                var acc_no = $("#account-no").val();
+                alert(url);
+                $.get(url, function(data, status) {
+                    $("#demo").html(data);
+                });
+            });
+        });
+    </script>
+</head>
+
+<body>
+
+    <div class="container">
+        <h2>Bank Challan Form</h2>
+        <form>
+            <div class="form-group">
+                <label for="challan-no">IFSC code:</label>
+                <input type="text" class="form-control" id="challan-no" placeholder="Enter IFSC code">
+            </div>
+            <div class="form-group">
+                <label for="name">Account holder name :</label>
+                <input type="text" class="form-control" id="name" placeholder="Enter name">
+            </div>
+            <div class="form-group">
+                <label for="date">Date:</label>
+                <input type="date" class="form-control" id="date">
+            </div>
+            <div class="form-group">
+                <label for="account-no">Account Number:</label>
+                <input type="text" class="form-control" id="account-no" placeholder="Enter Account Number">
+            </div>
+            <div class="form-group">
+                <label for="Branch">Branch :</label>
+                <input type="text" class="form-control" id="Branch" placeholder="Enter branch">
+            </div>
+            <div class="form-group">
+                <label for="amount">Amount:</label>
+                <input type="number" class="form-control" id="amount" placeholder="Enter Amount">
+            </div>
+            <div class="form-group">
+                <label for="acc-no">Account Number to be credited:</label>
+                <input type="text" class="form-control" id="acc-no" placeholder="Enter Reciever Account Number">
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div id="demo">
+    <div>
+
+    </div>
+
+</body>
+
+</html>
